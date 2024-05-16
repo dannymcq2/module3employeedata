@@ -11,8 +11,19 @@ const collectEmployees = function() {
       break; 
     }
     const lastName = prompt("Enter employee's last name:");
-    const salary = parseInt(prompt("Enter employee's salary:") || 0); 
-    employees.push({ firstName, lastName, salary });
+    if (lastName === null) {
+      break;
+    }
+    const salaryInput = prompt("Enter employee's salary:") 
+    if (salaryInput === null) {
+      break;
+    }
+    const salary = parseInt(salaryInput);
+    if (!isNaN(salary)) {
+      employees.push({ firstName, lastName, salary });
+    } else {
+      alert("Invalid salary. Please enter a valid number.");
+    }
     const continueAdding = confirm("Do you want to add another employee?");
     if (!continueAdding) {
       addEmployee = false;
