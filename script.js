@@ -43,6 +43,16 @@ const getRandomEmployee = function(employeesArray) {
 addEmployeesBtn.addEventListener('click', function() {
   const employees = collectEmployees();
   trackEmployeeData(employees);
+    if (employees.length > 0) {
+    const averageSalary = calculateAverageSalary(employees);
+    console.log(`The average employee salary between our ${employees.length} employee(s) is $${averageSalary.toFixed(2)}`);
+  
+    const randomEmployee = selectRandomEmployee(employees);
+    console.log(`Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`);
+  } else {
+    console.log("No employees added.");
+  }
+});
 });
 const calculateAverageSalary = function(employeesArray) {
   const totalSalary = employeesArray.reduce((acc, curr) => acc + curr.salary, 0);
