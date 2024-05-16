@@ -26,7 +26,7 @@ const collectEmployees = function() {
 
     let salary;
     while (true) {
-      const salaryInput = prompt("Enter employee's salary (numeric value only):");
+      const salaryInput = prompt("Enter employee's salary:");
       if (salaryInput === '') {
         break;
       }
