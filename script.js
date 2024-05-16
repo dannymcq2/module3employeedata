@@ -8,11 +8,21 @@ const collectEmployees = function() {
   let addEmployee = true;
   while (addEmployee) {
     const firstName = prompt("Enter employee's first name:");
-    if (firstName === null || firstName.trim() === "") {
-      break; 
+    if (firstName === null) {
+     break;
     }
+    if (firstName.trim() === "") {
+      continue;
+         }
     const lastName = prompt("Enter employee's last name:");
-    const salary = parseInt(prompt("Enter employee's salary:") || 0); 
+    if (lastName === null) {
+       break;
+    }
+    const salaryInput = prompt("Enter employee's salary:");
+    if (salaryInput === null) { 
+      break;
+    }
+    const salary = parseInt(salaryInput) || 0;
     employees.push({ firstName, lastName, salary });
     const continueAdding = confirm("Do you want to add another employee?");
     if (!continueAdding) {
@@ -21,8 +31,6 @@ const collectEmployees = function() {
   }
   return employees;
 }
-
-
   // TODO: Get user input to create and return an array of employee objects
 
 
