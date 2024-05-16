@@ -3,7 +3,6 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 const formContainer = document.querySelector('.form-container');
 const EmployeeTable = document.querySelector('#employee-table');
 let employees = [];
-
 // Collect employee data
 const collectEmployees = function() {
   let addEmployee = true;
@@ -23,11 +22,15 @@ const collectEmployees = function() {
   return employees;
 }
 
+
+  // TODO: Get user input to create and return an array of employee objects
+
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   const totalSalary = employeesArray.reduce((acc, curr) => acc + curr.salary, 0);
   const averageSalary = totalSalary / employeesArray.length;
-  console.log(`Average Salary: $${averageSalary.toFixed(2)}`);
+   console.log(`Average Salary: $${averageSalary.toFixed(2)}`);
+  // TODO: Calculate and display the average salary
 }
 
 // Select a random employee
@@ -35,64 +38,12 @@ const getRandomEmployee = function(employeesArray) {
   const randomIndex = Math.floor(Math.random() * employeesArray.length);
   const randomEmployee = employeesArray[randomIndex];
   console.log(`Random Employee: ${randomEmployee.firstName} ${randomEmployee.lastName}`);
+  // TODO: Select and display a random employee
 }
-
-// Event listener for 'Add Employees' button click
 addEmployeesBtn.addEventListener('click', function() {
   const employees = collectEmployees();
   trackEmployeeData(employees);
-    if (employees.length > 0) {
-    const averageSalary = calculateAverageSalary(employees);
-    console.log(`The average employee salary between our ${employees.length} employee(s) is $${averageSalary.toFixed(2)}`);
-  
-    const randomEmployee = selectRandomEmployee(employees);
-    console.log(`Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`);
-  } else {
-    console.log("No employees added.");
-  }
 });
-
-// Calculate average salary
-const calculateAverageSalary = function(employeesArray) {
-  const totalSalary = employeesArray.reduce((acc, curr) => acc + curr.salary, 0);
-  const averageSalary = totalSalary / employeesArray.length;
-  return averageSalary;
-}
-
-// Select random employee
-const selectRandomEmployee = function(employeesArray) {
-  const randomIndex = Math.floor(Math.random() * employeesArray.length);
-  return employeesArray[randomIndex];
-}
-
-// Track employee data
-const trackEmployeeData = function() {
-  const employees = collectEmployees();
-
-  console.table(employees);
-
-  if (employees.length > 0) {
-    const averageSalary = calculateAverageSalary(employees);
-    console.log(`The average employee salary between our ${employees.length} employee(s) is $${averageSalary.toFixed(2)}`);
-
-    const randomEmployee = selectRandomEmployee(employees);
-    console.log(`Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`);
-  } else {
-    console.log("No employees added.");
-  }
-
-  console.log('==============================');
-
-  employees.sort(function(a,b) {
-    if (a.lastName < b.lastName) {
-      return -1;
-    } else {
-      return 1;
-    }
-  });
-
-  displayEmployees(employees);
-}
 
 /*
   ====================
@@ -137,7 +88,9 @@ const displayEmployees = function(employeesArray) {
 
 const trackEmployeeData = function() {
   const employees = collectEmployees();
+
   console.table(employees);
+
   displayAverageSalary(employees);
 
   console.log('==============================');
@@ -157,3 +110,4 @@ const trackEmployeeData = function() {
 
 // Add event listener to 'Add Employees' button
 addEmployeesBtn.addEventListener('click', trackEmployeeData);
+ like this?
