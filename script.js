@@ -15,8 +15,8 @@ const collectEmployees = function() {
     const lastName = prompt("Enter employee's last name:");
     const salary = parseInt(prompt("Enter employee's salary:") || 0); 
     employees.push({ firstName, lastName, salary });
-    const continueAdding = confirm("Do you want to add another employee?");
-    if (!continueAdding) {
+    const addAnother = prompt("Do you want to add another employee? (yes/no").toLowerCase();
+    if (addAnother !== 'yes') {
       addEmployee = false;
     }
   }
