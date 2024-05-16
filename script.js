@@ -91,7 +91,6 @@ const trackEmployeeData = function() {
 
   console.table(employees);
 
-  displayAverageSalary(employees);
 
   console.log('==============================');
 
