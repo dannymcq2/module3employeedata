@@ -44,6 +44,42 @@ addEmployeesBtn.addEventListener('click', function() {
   const employees = collectEmployees();
   trackEmployeeData(employees);
 });
+const calculateAverageSalary = function(employeesArray) {
+  const totalSalary = employeesArray.reduce((acc, curr) => acc + curr.salary, 0);
+  const averageSalary = totalSalary / employeesArray.length;
+  return averageSalary;
+}
+const selectRandomEmployee = function(employeesArray) {
+  const randomIndex = Math.floor(Math.random() * employeesArray.length);
+  return employeesArray[randomIndex];
+}
+const trackEmployeeData = function() {
+  const employees = collectEmployees();
+
+  console.table(employees);
+
+  if (employees.length > 0) {
+    const averageSalary = calculateAverageSalary(employees);
+    console.log(`The average employee salary between our ${employees.length} employee(s) is $${averageSalary.toFixed(2)}`);
+
+    const randomEmployee = selectRandomEmployee(employees);
+    console.log(`Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`);
+  } else {
+    console.log("No employees added.");
+  }
+
+  console.log('==============================');
+
+  employees.sort(function(a,b) {
+    if (a.lastName < b.lastName) {
+      return -1;
+    } else {
+      return 1;
+    }
+  });
+
+  displayEmployees(employees);
+}
 
 /*
   ====================
@@ -88,9 +124,8 @@ const displayEmployees = function(employeesArray) {
 
 const trackEmployeeData = function() {
   const employees = collectEmployees();
-
   console.table(employees);
-
+  displayAverageSalary(employees);
 
   console.log('==============================');
 
