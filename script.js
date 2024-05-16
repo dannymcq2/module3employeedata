@@ -5,6 +5,7 @@ const EmployeeTable = document.querySelector('#employee-table');
 let employees = [];
 // Collect employee data
 const collectEmployees = function() {
+  const employees = [];
   let addEmployee = true;
   while (addEmployee) {
     const firstName = prompt("Enter employee's first name:");
