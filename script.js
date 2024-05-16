@@ -16,7 +16,7 @@ const collectEmployees = function() {
     const salary = parseInt(prompt("Enter employee's salary:") || 0); 
     employees.push({ firstName, lastName, salary });
     const addAnother = prompt("Do you want to add another employee? (yes/no").toLowerCase();
-    if (addAnother !== 'yes') {
+    if (!continueAdding) {
       addEmployee = false;
     }
   }
@@ -36,10 +36,6 @@ const displayAverageSalary = function(employeesArray) {
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
-  if (employeesArray.length === 0) {
-    console.log("No employees added yet.");
-    return;
-  }
   const randomIndex = Math.floor(Math.random() * employeesArray.length);
   const randomEmployee = employeesArray[randomIndex];
   console.log(`Random Employee: ${randomEmployee.firstName} ${randomEmployee.lastName}`);
