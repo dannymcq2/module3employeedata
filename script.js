@@ -1,9 +1,10 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
-
+const formContainer = document.querySelector('.form-container');
+const EmployeeTable = document.querySelector('#employee-table');
+let employees = [];
 // Collect employee data
 const collectEmployees = function() {
-  const employees = [];
   let addEmployee = true;
   while (addEmployee) {
     const firstName = prompt("Enter employee's first name:");
@@ -11,19 +12,8 @@ const collectEmployees = function() {
       break; 
     }
     const lastName = prompt("Enter employee's last name:");
-    if (lastName === null) {
-      break;
-    }
-    const salaryInput = prompt("Enter employee's salary:") 
-    if (salaryInput === null) {
-      break;
-    }
-    const salary = parseInt(salaryInput);
-    if (!isNaN(salary)) {
-      employees.push({ firstName, lastName, salary });
-    } else {
-      alert("Invalid salary. Please enter a valid number.");
-    }
+    const salary = parseInt(prompt("Enter employee's salary:") || 0); 
+    employees.push({ firstName, lastName, salary });
     const continueAdding = confirm("Do you want to add another employee?");
     if (!continueAdding) {
       addEmployee = false;
@@ -39,8 +29,7 @@ const collectEmployees = function() {
 const displayAverageSalary = function(employeesArray) {
   const totalSalary = employeesArray.reduce((acc, curr) => acc + curr.salary, 0);
   const averageSalary = totalSalary / employeesArray.length;
-
-  console.log(`Average Salary: $${averageSalary.toFixed(2)}`);
+   console.log(`Average Salary: $${averageSalary.toFixed(2)}`);
   // TODO: Calculate and display the average salary
 }
 
@@ -48,7 +37,6 @@ const displayAverageSalary = function(employeesArray) {
 const getRandomEmployee = function(employeesArray) {
   const randomIndex = Math.floor(Math.random() * employeesArray.length);
   const randomEmployee = employeesArray[randomIndex];
-
   console.log(`Random Employee: ${randomEmployee.firstName} ${randomEmployee.lastName}`);
   // TODO: Select and display a random employee
 }
@@ -56,6 +44,7 @@ addEmployeesBtn.addEventListener('click', function() {
   const employees = collectEmployees();
   trackEmployeeData(employees);
 });
+
 /*
   ====================
   STARTER CODE
