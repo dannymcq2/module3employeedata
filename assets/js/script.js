@@ -48,7 +48,9 @@ const collectEmployees = function() {
   }
   return employees;
 };
-
+const trackEmployeeData = function(employees) {
+  console.table(employees);
+  };
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   const totalSalary = employeesArray.reduce((acc, curr) => acc + curr.salary, 0);
