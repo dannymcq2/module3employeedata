@@ -6,7 +6,7 @@
 
  // Collect employee data
  const collectEmployees = function() {
-   let addEmployee = true;
+  let addEmployee = true;
   while (addEmployee) {
     const firstName = prompt("Enter employee's first name:");
     if (firstName === '') {
@@ -36,8 +36,8 @@
         break;
       }
     }
-    employees.push({ firstName, lastName, salary });
-    const continueAdding = confirm("Do you want to add another employee?");
+   employees.push({ firstName, lastName, salary });
+   const continueAdding = confirm("Do you want to add another employee?");
     if (!continueAdding) {
       addEmployee = false;
     }
@@ -54,15 +54,15 @@ const displayAverageSalary = function(employeesArray) {
 const getRandomEmployee = function(employeesArray) {
   const randomIndex = Math.floor(Math.random() * employeesArray.length);
   const randomEmployee = employeesArray[randomIndex];
-  console.log(`Congratulations to ${randomEmployee.firstName}, our random drawing winner!`);
-};
+   console.log(`Congratulations to ${randomEmployee.firstName}, our random drawing winner!`);
+ };
 addEmployeesBtn.addEventListener('click', function() {
-  const employees = collectEmployees();
-  trackEmployeeData(employees);
-});
+   const employees = collectEmployees();
+   trackEmployeeData(employees);
+ });
 /*
   ====================
-  STARTER CODE
+   STARTER CODE
   Do not modify any of the code below this line:
 */
 // Display employee data in an HTML table
@@ -74,11 +74,11 @@ const displayEmployees = function(employeesArray) {
   // Loop through the employee data and create a row for each employee
   for (let i = 0; i < employeesArray.length; i++) {
     const currentEmployee = employeesArray[i];
-    const newTableRow = document.createElement("tr");
+       const newTableRow = document.createElement("tr");
     const firstNameCell = document.createElement("td");
     firstNameCell.textContent = currentEmployee.firstName;
     newTableRow.append(firstNameCell);
-    const lastNameCell = document.createElement("td");
+   const lastNameCell = document.createElement("td");
     lastNameCell.textContent = currentEmployee.lastName;
     newTableRow.append(lastNameCell);
     const salaryCell = document.createElement("td");
@@ -93,7 +93,7 @@ const displayEmployees = function(employeesArray) {
 };
 const trackEmployeeData = function(employees) {
   console.table(employees);
-  displayAverageSalary(employees);
+ displayAverageSalary(employees);
   console.log('==============================');
   getRandomEmployee(employees);
   employees.sort(function(a, b) {
