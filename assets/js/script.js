@@ -1,9 +1,3 @@
-// Get a reference to the #add-employees-btn element
-const addEmployeesBtn = document.querySelector('#add-employees-btn');
-const formContainer = document.querySelector('.form-container');
-const EmployeeTable = document.querySelector('#employee-table');
-let employees = [];
-
 // Collect employee data
 const collectEmployees = function() {
   let addEmployee = true;
@@ -48,9 +42,7 @@ const collectEmployees = function() {
   }
   return employees;
 };
-const trackEmployeeData = function(employees) {
-  console.table(employees);
-  };
+
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   const totalSalary = employeesArray.reduce((acc, curr) => acc + curr.salary, 0);
@@ -69,6 +61,7 @@ addEmployeesBtn.addEventListener('click', function() {
   const employees = collectEmployees();
   trackEmployeeData(employees);
 });
+
 /*
   ====================
   STARTER CODE
