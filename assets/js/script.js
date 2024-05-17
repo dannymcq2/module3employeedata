@@ -1,3 +1,10 @@
+@ -1,129 +1,133 @@
+// Get a reference to the #add-employees-btn element
+const addEmployeesBtn = document.querySelector('#add-employees-btn');
+const formContainer = document.querySelector('.form-container');
+const EmployeeTable = document.querySelector('#employee-table');
+let employeesArray = [];
+
 // Collect employee data
 const collectEmployees = function() {
   let addEmployee = true;
@@ -61,7 +68,6 @@ addEmployeesBtn.addEventListener('click', function() {
   const employees = collectEmployees();
   trackEmployeeData(employees);
 });
-
 /*
   ====================
   STARTER CODE
