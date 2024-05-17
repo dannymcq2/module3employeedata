@@ -1,4 +1,4 @@
-#Employee Payroll Tracker
+#Title Employee Payroll Tracker
 
 ## Description 
 My motivation was to make a simple site page that allows to collect employees payroll & name. I worked on this project because the current written code was not functioning so I modified to make it work. The problem I solved was with the java script code. I learned more about java script & how I can use it to make a website function better & cleaner. This project for module 3 challenge is a website where you can add your employee payroll, names & salary. The average will be given & each employee will be in alphabetical order. I was given previously written code that I was instructed to modify & make sure all functions work. This project can be helpful or useful for hiring managers or someone else perhaps to keep a list of employees in alphabetical order with the option to see the average salary. The site is very easy to use & navigate. The look of the site is simple & straightforward with only 1 page. 
