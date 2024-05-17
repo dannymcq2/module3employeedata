@@ -2,7 +2,7 @@
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 const formContainer = document.querySelector('.form-container');
 const EmployeeTable = document.querySelector('#employee-table');
-let employeesArray = [];
+let employees = [];
 
 // Collect employee data
 const collectEmployees = function() {
