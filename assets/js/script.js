@@ -63,6 +63,10 @@ const getRandomEmployee = function(employeesArray) {
   console.log(`Congratulations to ${randomEmployee.firstName}, our random drawing winner!`);
 };
 
+addEmployeesBtn.addEventListener('click', function() {
+  const employees = collectEmployees();
+  trackEmployeeData(employees);
+});
 /*
   ====================
   STARTER CODE
