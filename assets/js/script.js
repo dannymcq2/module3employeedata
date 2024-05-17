@@ -2,7 +2,7 @@
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 const formContainer = document.querySelector('.form-container');
 const EmployeeTable = document.querySelector('#employee-table');
-let employees = [];
+let employeesArray = [];
 
 // Collect employee data
 const collectEmployees = function() {
@@ -62,11 +62,6 @@ const getRandomEmployee = function(employeesArray) {
   const randomEmployee = employeesArray[randomIndex];
   console.log(`Congratulations to ${randomEmployee.firstName}, our random drawing winner!`);
 };
-
-addEmployeesBtn.addEventListener('click', function() {
-  const employees = collectEmployees();
-  trackEmployeeData(employees);
-});
 
 /*
   ====================
